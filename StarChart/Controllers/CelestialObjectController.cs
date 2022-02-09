@@ -59,7 +59,7 @@ namespace StarChart.Controllers
         {
             _context.CelestialObjects.Add(object1);
 
-            return CreatedAtAction("GetById", new { Id = object1.Id }, object1);
+            return CreatedAtRoute("GetById", new { Id = object1.Id }, object1);
         }
 
         [HttpPut("{id}")]
