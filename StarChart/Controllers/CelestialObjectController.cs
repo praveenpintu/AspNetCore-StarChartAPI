@@ -33,7 +33,7 @@ namespace StarChart.Controllers
         public IActionResult GetByName(string name)
         {
             var entity = _context.CelestialObjects.Where(e => e.Name == name);
-            if (entity==null)
+            if (!entity.Any())
                 return NotFound();
             foreach (var celestialObject in entity)
             {
